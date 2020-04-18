@@ -1,4 +1,6 @@
 /* Button UI */
+$btnRadius = calc(1.2rem * 4)
+
 button.btn
   position relative
   font-size 1.6rem
@@ -7,31 +9,55 @@ button.btn
   width 16rem
   background $cWhite
   border-radius calc(1.2rem * 4)
-  color $cBlack
   border .2rem solid $cBlack
   // transition color 1s ease .2s, background 2s ease 1s
   box-shadow 4px 4px 8px 0px rgba($cBlack, .5)
   transition all .3s
-  &:after
-    position absolute
-    content ""
-    bottom -4px
-    display block
-    height 100%
-    width 100%
-    border-radius calc(1.2rem * 4)
-    border-bottom 4px solid #000
   &.float
-    &:focus
-      outline: none
     &:hover
       cursor pointer
       color $cWhite
       background $cBlack
       // box-shadow 8px 8px 15px 0px rgba($cBlack, .7)
       box-shadow 2px 2px 5px 0px rgba($cBlack, .1)
+      border-width 0
       transform translate(2px, 2px)
-      &:after
-        border-width 0
-      &:focus
-        border 4px solid orange
+    &:focus
+      outline: none
+      border 2px solid orangered
+  // &:after
+  //   position absolute
+  //   content ""
+  //   bottom -4px
+  //   display block
+  //   height 100%
+  //   width 100%
+  //   border-radius $btnRadius
+  //   border-bottom 4px solid $cBlack
+  &.slide-bg
+    position relative
+    overflow hidden
+    span.bg
+      border-radius $btnRadius
+      position absolute
+      top 0
+      left 0
+      display inlin-block
+      width 100%
+      height 100%
+      // background-color $cBlack
+      transition all .3s
+      transform translateX(-100%)
+    span.tx
+      position absolute
+      transform translate(-50%,-50%)
+      transition all .4s
+    &:hover span.bg
+      background $cGray
+      cursor pointer
+      transform none
+      + span.tx
+        color $cWhite
+    &:focus
+      outline: none
+      border 2px solid lightblue

@@ -1,0 +1,21 @@
+/* Transrate */
+rect()
+  color $cWhite
+  width 100px
+  height 100px
+  background orangered
+
+.rect
+  fx-c()
+  rect()
+  box-shadow: 8px 8px 0 $cGray
+  transition: 1s
+  &.translate
+    transform: translate(100%, 0)
+  &.rotate
+    &:hover
+      // transform-origin 50px 50px
+      transform-origin center center
+      // transform: rotate(45deg)
+      // transform: skew(-25deg)
+      transform: scale(1.2) skew(-25deg, 12deg) rotate(-25deg)
