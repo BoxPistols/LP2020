@@ -1,53 +1,30 @@
-$cBlack = #2d3135
-$cWhite = #f9f9f9
+@import "_base.styl"
+@import "components/*"
 
-*
-  margin 0
-  padding 0
-  box-sizing border-box
-
-html
-  font-size 62.5%
-body
-  font-size 1.6rem
 .wrap
   padding 24px
   // .content
   //     background teal
+  .section
+    margin 2.4rem
 
-button.btn
-  position relative
-  font-size 1.6rem
-  // padding 1.2rem 3.2rem
-  height 4rem
-  width 16rem
-  background $cWhite
-  border-radius calc(1.2rem * 4)
-  color $cBlack
-  border .2rem solid $cBlack
-  // transition color 1s ease .2s, background 2s ease 1s
-  box-shadow 4px 4px 8px 0px rgba($cBlack, .5)
-  transition all .3s
-  &:after
-    position absolute
-    content ""
-    bottom -4px
-    display block
-    height 100%
-    width 100%
-    border-radius calc(1.2rem * 4)
-    border-bottom 4px solid #000
-  &.float
-    &:focus
-      outline: none
+/* Transrate */
+rect()
+  color $cWhite
+  width 100px
+  height 100px
+  background orangered
+
+.rect
+  fx-c()
+  rect()
+  transition: 1s
+  &.translate
+    transform: translate(100%, 0)
+  &.rotate
     &:hover
-      cursor pointer
-      color $cWhite
-      background $cBlack
-      // box-shadow 8px 8px 15px 0px rgba($cBlack, .7)
-      box-shadow 2px 2px 5px 0px rgba($cBlack, .1)
-      transform translate(2px, 2px)
-      &:after
-        border-width 0
-      &:focus
-        border 4px solid orange
+      // transform-origin 50px 50px
+      transform-origin center center
+      // transform: rotate(45deg)
+      // transform: skew(-25deg)
+      transform: scale(1.2) skew(-25deg, 12deg) rotate(-25deg)
