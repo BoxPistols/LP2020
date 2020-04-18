@@ -1,0 +1,14 @@
+{
+  "name": "prepros-project",
+  "version": "1.0.0",
+  "description": "This is a dummy package.json file created by Prepros to manage packages with NPM. You can edit this file to add your own information.",
+  "dependencies": {
+    "node-sass": "^4.13.1",
+    "pug-lint": "^2.6.0",
+    "sass": "^1.26.3",
+    "sass-loader": "^8.0.2",
+    "stylelint": "^13.3.2",
+    "stylus": "^0.54.7",
+    "yarn": "^1.22.4"
+  }
+}
