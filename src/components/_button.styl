@@ -10,8 +10,7 @@ btnBefore()
   display inlin-block
   width 100%
   height 100%
-  border-radius 0
-  transition all $anmFast
+  transition all $anmNormal
   z-index -1
 
 button.btn
@@ -87,16 +86,23 @@ button.btn
 
   /* Button UI hover Interaction 3D */
   &.cover-3d
+    transform-style: preserve-3d
+    perspective: 120px
+    overflow visible
+    transition: all $anmSlow
     &:before
+      border-radius $btnRadius
       btnBefore()
-      transform translateX(-100%)
-      z-index -1
+      transform-origin: top center
+      // transform: rotate3d(1,0,0,-90deg)
+      transform: rotateX(90deg)
+      background $cGray
+      opacity 0
     &:hover
       color $cWhite
       &:before
-        background $cGray
+        opacity 1
         transform none
     &:focus
       outline: none
       border 2px solid lightblue
-      position relative
