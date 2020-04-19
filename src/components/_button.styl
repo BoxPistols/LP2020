@@ -106,3 +106,38 @@ button.btn
     &:focus
       outline: none
       border 2px solid lightblue
+
+  /* Button UI hover Interaction 3D Cube */
+  &.btn-cube
+    .cube
+      transform-style: preserve-3d
+      perspective: 240px
+      border-radius 0
+      width 100%
+      height 4rem
+      overflow visible
+      position absolute
+      left 0
+      top 0
+      text-align center
+      line-height calc(4rem - .4rem)
+      border-radius 0
+      transition: all $anmSlow
+      &.is-hover, &.is-default
+        transform-origin center center -25px
+      &.is-hover
+        background $cGray
+        color $cWhite
+        transform: rotateX(90deg)
+      &.is-default
+        background $cWhite
+        color $cGray
+        transform rotateX(0deg)
+      &:hover
+        &.is-hover
+          transform rotateX(0deg)
+        &.is-default
+          transform: rotateX(90deg)
+    &:focus
+      outline: none
+      border 2px solid lightblue
