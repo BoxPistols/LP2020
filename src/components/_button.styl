@@ -109,22 +109,24 @@ button.btn
 
   /* Button UI hover Interaction 3D Cube */
   &.btn-cube
+    transform-style: preserve-3d
+    perspective: 240px
+    border-radius 0
+    width 16rem
+    height 4rem
+    overflow visible
     .cube
-      transform-style: preserve-3d
-      perspective: 240px
-      border-radius 0
-      width 100%
-      height 4rem
-      overflow visible
       position absolute
       left 0
       top 0
+      width 100%
+      height 100%
       text-align center
       line-height calc(4rem - .4rem)
       border-radius 0
       transition: all $anmSlow
-      &.is-hover, &.is-default
-        transform-origin center center -25px
+      transform-origin: center center -25px
+
       &.is-hover
         background $cGray
         color $cWhite
@@ -141,3 +143,43 @@ button.btn
     &:focus
       outline: none
       border 2px solid lightblue
+
+/* Cubic sample */
+.answer
+  .btn
+    position relative
+    display inline-block
+    transformstyle: preserve-3d
+    perspective 300px
+    width 150px
+    height 50px
+    margin 0 auto
+    cursor pointer
+    overflow hidden
+    &.cubics
+      .cube
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 100%
+        border 1px solid $cBlack
+        line-height 48px
+        text-align center
+        transition all 0.3s
+        transform-origin center center -25px
+        &.hovering
+          background-color: $cBlack;
+          color: $cWhite;
+          transform: rotateX(90deg);
+        &.default
+          background-color: $cWhite;
+          color: $cBlack;
+          transform: rotateX(0);
+          opacity 1
+      &:hover
+        & .hovering
+          transform: rotateX(0);
+        & .default
+          opacity 0
+          transform: rotateX(-90deg);
