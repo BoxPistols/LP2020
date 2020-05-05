@@ -1,0 +1,25 @@
+.l_loader-dot
+  text-align center
+  >.bounce
+    display inline-flex
+    width 18px
+    height 18px
+    background $cBlack
+    border-radius 50%
+    // Set Animation
+    animation loader-bounce 1.2s infinite
+    &.b-1
+      animation-delay: -.32s
+    &.b-2
+      animation-delay: -.16s
+
+@keyframes loader-bounce
+  0%
+    opacity 0
+    transform scale(0)
+  50%
+    opacity 1
+    transform scale(1)
+  100%
+    opacity 0
+    transform scale(0)

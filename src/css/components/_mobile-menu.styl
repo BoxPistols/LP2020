@@ -11,11 +11,11 @@
     width 35px
     height 4px
     border-radius 8px
-    transition all .4s
+    transition all 1s
     &:not(:last-child)
       margin-bottom 10px
     &:nth-child(2)
-      background-color tomato
+      background-color crimson
 
 /*---------- Nav Menu  ----------*/
 .nav
@@ -23,10 +23,11 @@
   // is Open Style
   ul
     position absolute
-    left 50%
+    // left 50%
     right 50%
     top 20%
     bottom 80%
+    transform translate(50%, 50%)
     li a
       font-size 4rem
 
@@ -57,9 +58,31 @@
       $rad = 90
       transform translateY(14px) rotate(135deg)
     &:nth-child(2)
-      background-color crimson
-      transition-delay .3s
+      background-color gold
+      box-shadow 0 0 12px gold
+      transition-delay .2s
+      // Fun Anime Center Bar
+      animation bar-character 1s
       transform translateX(18px) scaleX(0) rotate(360deg)
+      // Normal Anime Center Bar
+      // transform translateX(18px) scaleX(0)
     &:nth-child(3)
       transition-delay .1s
       transform translateY(-14px) rotate(-135deg)
+
+@keyframes bar-character
+  0%
+    transform translateY(12px)
+    width 35px
+  30%
+    transform translateY(-12px) translateX(18px)
+    width (35/2)px
+    height 4px
+  70%
+    transform translateY(-12px) translateX(18px)
+    width (35*4)px
+    height 8px
+  100%
+    transform translateY(-12px) translateX(18px) scaleX(0) rotate(720deg)
+    width (35/2)px
+    height 4px
