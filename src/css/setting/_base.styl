@@ -11,15 +11,30 @@ body
   color $cBlack
   font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 
+a
+  text-decoration none
+  color $cWhite
+  transition .3s
+  &:hover
+    color tomato
+
+li
+  line-height 2
+  list-style none
+
 p
   line-height 1.5
 
 .wrap
   min-height 100vh
   padding 24px
-  .content
-    .section
-      margin 2.4rem
+
+.content
+  margin-bottom 2.4rem
+  padding 2.4rem
+  background lighten(lightgray, 80%)
+  .section
+    margin 2.4rem
 
 .footer_org
   display block
@@ -36,6 +51,7 @@ p
 
 header
   fx-j-e()
+  margin-bottom 1.6rem
 
 cap.cap
   display block

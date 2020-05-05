@@ -15,26 +15,51 @@
     &:not(:last-child)
       margin-bottom 10px
     &:nth-child(2)
-      background-color crimson
+      background-color tomato
 
-// open
-.menu-open
-  background-color rgba($cBlack, .5)
-  .section
-    button.btn
-      opacity .5
-      pointer-events none
-  .m_mobile-menu
-    >span
-      background-color $cWhite
-      &:nth-child(1)
-        transition-delay .1s
-        $rad = 90
-        transform translateY(14px) rotate(135deg)
-      &:nth-child(2)
-        background-color crimson
-        transition-delay .3s
-        transform translateX(18px) scaleX(0) rotate(360deg)
-      &:nth-child(3)
-        transition-delay .1s
-        transform translateY(-14px) rotate(-135deg)
+/*---------- Nav Menu  ----------*/
+.nav
+  display none
+  // is Open Style
+  ul
+    position absolute
+    left 50%
+    right 50%
+    top 20%
+    bottom 80%
+    li a
+      font-size 4rem
+
+/*=============================================
+=            Menu Open            =
+=============================================*/
+.overlay.menu-open
+  background-color rgba($cBlack, 0.5);
+  display block
+  position fixed
+  top 0
+  left 0
+  width 100vw
+  height 100vh
+  z-index 2
+  +.container
+    .l_menu
+      z-index 10
+      .nav
+        fx-c()
+    //  button.btn
+    //   pointer-events none
+.m_mobile-menu.menu-open
+  >span
+    background-color $cWhite
+    &:nth-child(1)
+      transition-delay .1s
+      $rad = 90
+      transform translateY(14px) rotate(135deg)
+    &:nth-child(2)
+      background-color crimson
+      transition-delay .3s
+      transform translateX(18px) scaleX(0) rotate(360deg)
+    &:nth-child(3)
+      transition-delay .1s
+      transform translateY(-14px) rotate(-135deg)
