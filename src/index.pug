@@ -17,18 +17,19 @@ html(lang="ja")
 
   body
     .wrap
-      .content
-        .l_menu
-          include html/_mobile-menu
+      .container
+        header
+          .l_menu
+            include html/_mobile-menu
 
-      .content
-        section.section
-          cap.cap button > text
-          button.btn.slide-bgTx Button slide tx
-            span.tx
-        section.section
-          cap.cap button include text / focus text
-          button.btn.slide-bg.tip Button slide
+        .content
+          section.section
+            cap.cap button > text
+            button.btn.slide-bgTx Button slide tx
+              span.tx
+          section.section
+            cap.cap button include text / focus text
+            button.btn.slide-bg.tip Button slide
 
     include html/_footer
     script(src="js/app.js")
