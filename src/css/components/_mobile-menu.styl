@@ -1,4 +1,4 @@
-.mobile-menu-icon
+.m_mobile-menu
   background-color transparent
   border none
   &:focus
@@ -9,32 +9,80 @@
     display block
     background-color $cBlack
     width 35px
-    height 2px
-    border-radius 2px
-    transition all .4s
+    height 4px
+    border-radius 8px
+    transition all 1s
     &:not(:last-child)
-      margin-bottom 9px
+      margin-bottom 10px
     &:nth-child(2)
       background-color crimson
 
-// open
-.menu-open
-  background-color rgba($cBlack, .5)
-  .section
-    button.btn
-      opacity .5
-      pointer-events none
-  .mobile-menu-icon
-    >span
-      background-color $cWhite
-      &:nth-child(1)
-        transition-delay .1s
-        $rad = 90
-        transform translateY(11px) rotate(135deg)
-      &:nth-child(2)
-        background-color blue
-        transition-delay .3s
-        transform translateX(18px) scaleX(0)
-      &:nth-child(3)
-        transition-delay .1s
-        transform translateY(-11px) rotate(-135deg)
+/*---------- Nav Menu  ----------*/
+.nav
+  display none
+  // is Open Style
+  ul
+    position absolute
+    // left 50%
+    right 50%
+    top 20%
+    bottom 80%
+    transform translate(50%, 50%)
+    li a
+      font-size 4rem
+
+/*=============================================
+=            Menu Open            =
+=============================================*/
+.overlay.menu-open
+  background-color rgba($cBlack, 0.5);
+  display block
+  position fixed
+  top 0
+  left 0
+  width 100vw
+  height 100vh
+  z-index 2
+  +.container
+    .l_menu
+      z-index 10
+      .nav
+        fx-c()
+    //  button.btn
+    //   pointer-events none
+.m_mobile-menu.menu-open
+  >span
+    background-color $cWhite
+    &:nth-child(1)
+      transition-delay .1s
+      $rad = 90
+      transform translateY(14px) rotate(135deg)
+    &:nth-child(2)
+      background-color gold
+      box-shadow 0 0 12px gold
+      transition-delay .2s
+      // Fun Anime Center Bar
+      animation bar-character 1s
+      transform translateX(18px) scaleX(0) rotate(360deg)
+      // Normal Anime Center Bar
+      // transform translateX(18px) scaleX(0)
+    &:nth-child(3)
+      transition-delay .1s
+      transform translateY(-14px) rotate(-135deg)
+
+@keyframes bar-character
+  0%
+    transform translateY(12px)
+    width 35px
+  30%
+    transform translateY(-12px) translateX(18px)
+    width (35/2)px
+    height 4px
+  70%
+    transform translateY(-12px) translateX(18px)
+    width (35*4)px
+    height 8px
+  100%
+    transform translateY(-12px) translateX(18px) scaleX(0) rotate(720deg)
+    width (35/2)px
+    height 4px
