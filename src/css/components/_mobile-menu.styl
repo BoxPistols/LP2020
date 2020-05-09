@@ -11,7 +11,7 @@
     width 35px
     height 4px
     border-radius 8px
-    transition all 1s
+    transition all .4s
     &:not(:last-child)
       margin-bottom 10px
     &:nth-child(2)
@@ -58,14 +58,14 @@
       $rad = 90
       transform translateY(14px) rotate(135deg)
     &:nth-child(2)
-      background-color gold
+      // background-color gold
       box-shadow 0 0 12px gold
       transition-delay .2s
       // Fun Anime Center Bar
-      animation bar-character 1s
-      transform translateX(18px) scaleX(0) rotate(360deg)
+      // animation bar-character 1s
+      // transform translateX(18px) scaleX(0) rotate(360deg)
       // Normal Anime Center Bar
-      // transform translateX(18px) scaleX(0)
+      transform translateX(18px) scaleX(0)
     &:nth-child(3)
       transition-delay .1s
       transform translateY(-14px) rotate(-135deg)

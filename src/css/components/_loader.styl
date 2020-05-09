@@ -2,18 +2,20 @@
   text-align center
   >.bounce
     display inline-flex
-    width 18px
-    height 18px
+    width 16px
+    height 16px
+    // border 2px solid $cBlack
     background $cBlack
     border-radius 50%
     // Set Animation
-    animation loader-bounce 1.2s infinite
-
+    // animation loader-bounce 1.2s infinite
+    animation(
+      $name: loader-bounce
+    )
     // TODO
     for num in (1..5)
       &:nth-child({num})
-        animation-delay (num * 0.16)s
-
+        animation-delay (num * 0.12)s
     // &.b-1
     //   animation-delay: -.32s
     // &.b-2
