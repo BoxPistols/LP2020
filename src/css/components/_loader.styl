@@ -8,10 +8,16 @@
     border-radius 50%
     // Set Animation
     animation loader-bounce 1.2s infinite
-    &.b-1
-      animation-delay: -.32s
-    &.b-2
-      animation-delay: -.16s
+
+    // TODO
+    for num in (1..5)
+      &:nth-child({num})
+        animation-delay (num * 0.16)s
+
+    // &.b-1
+    //   animation-delay: -.32s
+    // &.b-2
+    //   animation-delay: -.16s
 
 @keyframes loader-bounce
   0%
