@@ -25,23 +25,36 @@
     transform scale(0)
 
 /*----------  Animation Test  ----------*/
+animation(
+    $name,
+    $duration = 2s,
+    $infinite = infinite
+  ){
+    animation-name $name
+    animation-duration $duration
+    animation-iteration-count $infinite
+}
+
 .m_anime
   fx-c()
   margin-top 2.4rem
   >.dv_rect-anime
     width 150px
     height 150px
-    border-radius 50%
+    // border-radius 50%
     background-color pink
     border 4px solid $cBlack
+    animation(
+      $name: dv_bounce
+    )
     // animation dv_bounce 1s infinite
-    animation dv_bounce 1.5s
-    animation-timing-function ease-in-out
-    animation-delay 2s
-    animation-iteration-count infinite
-    animation-direction alternate
-    animation-fill-mode forwards
-    transform scale(0)
+    // animation dv_bounce 1.5s
+    // animation-timing-function ease-in-out
+    // animation-delay 2s
+    // animation-iteration-count infinite
+    // animation-direction alternate
+    // animation-fill-mode forwards
+    // transform scale(1)
     &.paused
       animation-play-state paused
 
