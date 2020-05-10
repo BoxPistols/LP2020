@@ -19,7 +19,8 @@
 
 /*---------- Nav Menu  ----------*/
 .nav
-  display none
+  visibility hidden
+  fx-c()
   // is Open Style
   ul
     position absolute
@@ -28,12 +29,22 @@
     top 20%
     bottom 80%
     transform translate(50%, 50%)
-    li a
-      font-size 4rem
+    li
+      a
+        font-size 4rem
+        width 100vw
+        display flex
+        justify-content center
+        transition all $anmNormal
+        &:hover
+          background-color $cBlack
 
 /*=============================================
 =            Menu Open            =
 =============================================*/
+.nav.menu-open
+  visibility visible
+
 .overlay
   background-color rgba($cBlack, 0.5);
   visibility hidden
@@ -48,13 +59,13 @@
   &.menu-open
     visibility visible
     opacity 1
+
   +.container
     .l_menu
       z-index 10
-      .nav
-        fx-c()
     //  button.btn
     //   pointer-events none
+
 .m_mobile-menu.menu-open
   >span
     background-color $cWhite
