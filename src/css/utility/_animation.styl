@@ -7,12 +7,12 @@ $anmSlow = .4s
 animation(
     $name,
     $duration = 2s,
-    $infinite = infinite,
+    $iteration-count = 1, // infinite
     $fill-mode = forwards
   ){
     animation-name $name
     animation-duration $duration
-    animation-iteration-count $infinite
+    animation-iteration-count $iteration-count
     animation-fill-mode $fill-mode
 }
 
@@ -26,16 +26,9 @@ animation(
     background-color pink
     border 4px solid $cBlack
     animation(
-      $name: dv_bounce2
+      $name: dv_bounce,
+      $iteration-count: infinite
     )
-    // animation dv_bounce 1s infinite
-    // animation dv_bounce 1.5s
-    // animation-timing-function ease-in-out
-    // animation-delay 2s
-    // animation-iteration-count infinite
-    // animation-direction alternate
-    // animation-fill-mode forwards
-    // transform scale(1)
     &.paused
       animation-play-state paused
 
@@ -53,3 +46,14 @@ animation(
     background-color teal
     transform scale(1)
     border-radius 50%
+
+/*
+  animation dv_bounce 1s infinite
+  animation dv_bounce 1.5s
+  animation-timing-function ease-in-out
+  animation-delay 2s
+  animation-iteration-count infinite
+  animation-direction alternate
+  animation-fill-mode forwards
+  transform scale(1)
+*/

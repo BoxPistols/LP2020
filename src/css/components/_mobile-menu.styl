@@ -34,15 +34,20 @@
 /*=============================================
 =            Menu Open            =
 =============================================*/
-.overlay.menu-open
+.overlay
   background-color rgba($cBlack, 0.5);
-  display block
+  visibility hidden
   position fixed
   top 0
   left 0
   width 100vw
   height 100vh
   z-index 2
+  opacity 0
+  transition $anmSlow
+  &.menu-open
+    visibility visible
+    opacity 1
   +.container
     .l_menu
       z-index 10
