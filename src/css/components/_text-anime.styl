@@ -1,18 +1,31 @@
 .l__anime-title
-  .g__anime-title
-    background-color orange
-    // shadow-default()
-    shadow(12px, gray, .7)
-    fx-c()
-    padding 2.4rem
+    .g__anime-title
+        background-color orange
+        // shadow-default()
+        shadow(12px, gray, .7)
+        fx-c()
+        padding 2.4rem
     .m__anime-title
-      .char
-        color $cWhite
-        font-size 3.2rem
-        letter-spacing: 4px
-      &.is-anime
-        >.char
-          color #000
+        display inline-block
+        .char
+            color $cWhite
+            font-size 3.2rem
+            letter-spacing: 4px
+        &.is-anime
+            .char
+                color: $cBlack
+                animation(
+                    $name: wave-rect ,
+                    $duration: 1.2s,
+                    $iteration-count: infinite
+                )
+    .g__anime-button
+        margin-top 2.4rem
 
-  .g__anime-button
-    margin-top 2.4rem
+@keyframes wave-rect
+    0%, 20%, 70%, 100%
+        opacity 0
+        transform scale(0.6)
+    50%
+        opacity 1
+        transform scale(1)
