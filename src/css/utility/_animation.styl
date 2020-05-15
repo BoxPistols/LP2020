@@ -8,13 +8,27 @@ animation(
     $name,
     $duration = 2s,
     $iteration-count = 1, // infinite
-    $fill-mode = forwards
+    $fill-mode = 'forwards',
+    $delay = 0s,
+    $timing-function = 'ease-in-out'
   ){
     animation-name $name
     animation-duration $duration
     animation-iteration-count $iteration-count
     animation-fill-mode $fill-mode
+    animation-delay $delay
+    animation-timing-function $timing-function
 }
+/*
+  animation dv_bounce 1s infinite
+  animation dv_bounce 1.5s
+  animation-timing-function ease-in-out
+  animation-delay 2s
+  animation-iteration-count infinite
+  animation-direction alternate
+  animation-fill-mode forwards
+  transform scale(1)
+*/
 
 .m_anime
   fx-c()
