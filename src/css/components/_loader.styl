@@ -54,6 +54,25 @@
       border solid orange
       animation-delay 1.5s
 
+.m_loader-rect
+  margin 4.8rem auto
+  width 60px
+  height 30px
+  text-align center
+  .a_loader-rect
+    display inline-block
+    width 6px
+    height 100%
+    background $gradBlue
+    animation(
+      $name: wave-rect ,
+      $duration: 1.2s,
+      $iteration-count: infinite
+    )
+    for num in (1..7)
+      &:nth-child({num})
+        animation-delay (num * 0.12)s
+
 
 /*----------  Keyframes  ----------*/
 
@@ -101,3 +120,11 @@
     opacity 1
     transform scale(1)
     border-width 1px
+
+@keyframes wave-rect
+  0%, 20%, 70%, 100%
+    // opacity 0
+    transform scale(0.6)
+  50%
+    // opacity 1
+    transform scale(1)
