@@ -4,10 +4,8 @@
     display inline-flex
     width 16px
     height 16px
-    // border 2px solid $cBlack
     background $cBlack
     border-radius 50%
-    // Set Animation
     // animation loader-bounce 1.2s infinite
     animation(
       $name: loader-bounce,
@@ -34,6 +32,46 @@
       $name: sppier ,
       $iteration-count: infinite
     )
+
+.m_loader-wave
+  position relative
+  fx-c()
+  margin 2.4rem auto
+  .a_loader-wave
+    position absolute
+    width 50px
+    height 50px
+    background lightgray
+    border solid $cBlack
+    border-radius 50%
+    opacity .6
+    animation(
+      $name: wave ,
+      $duration: 3s,
+      $iteration-count: infinite
+    )
+    &:nth-child(2)
+      border solid orange
+      animation-delay 1.5s
+
+.m_loader-rect
+  margin 4.8rem auto
+  width 60px
+  height 30px
+  text-align center
+  .a_loader-rect
+    display inline-block
+    width 6px
+    height 100%
+    background $gradBlue
+    animation(
+      $name: wave-rect ,
+      $duration: 1.2s,
+      $iteration-count: infinite
+    )
+    for num in (1..7)
+      &:nth-child({num})
+        animation-delay (num * 0.12)s
 
 
 /*----------  Keyframes  ----------*/
@@ -73,14 +111,20 @@
   100%
     transform rotateX(-180deg) rotateY(180deg)
 
+@keyframes wave
+  0%,  100%
+    opacity 0
+    transform scale(0)
+    border-width 4px
+  50%
+    opacity 1
+    transform scale(1)
+    border-width 1px
 
-/*
-  animation dv_bounce 1s infinite
-  animation dv_bounce 1.5s
-  animation-timing-function ease-in-out
-  animation-delay 2s
-  animation-iteration-count infinite
-  animation-direction alternate
-  animation-fill-mode forwards
-  transform scale(1)
-*/
+@keyframes wave-rect
+  0%, 20%, 70%, 100%
+    // opacity 0
+    transform scale(0.6)
+  50%
+    // opacity 1
+    transform scale(1)
