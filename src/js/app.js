@@ -6,16 +6,9 @@
     this.classList.toggle("menu-open")
   }
 
-  export class PersonSet {
-    constructor(id, name) {
-      this.id = id
-      this.name = name
-    }
-    printPersonData() {
-      console.log(this.name)
-    }
+  // Text Animation
+  document.querySelector('.tex-anime__button').onclick = function (){
+    const texAnim_target = document.querySelector('.tex-anime__ml')
+    texAnim_target.classList.toggle('is-anime')
   }
-
-  const psD = new personSet(20, "北斗神拳")
-  psD.printPersonData()
 }
