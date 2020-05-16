@@ -7,7 +7,7 @@
     cursor pointer
   >span
     display block
-    background-color $cBlack
+    background-color $cGray
     width 35px
     height 4px
     border-radius 8px
@@ -15,7 +15,7 @@
     &:not(:last-child)
       margin-bottom 10px
     &:nth-child(2)
-      background-color crimson
+      background-color $cGray-light
 
 /*---------- Nav Menu  ----------*/
 .nav
@@ -74,8 +74,10 @@
       $rad = 90
       transform translateY(14px) rotate(135deg)
     &:nth-child(2)
+      background-color $cGray
+      // Action Design Menu
       // background-color gold
-      box-shadow 0 0 12px gold
+      // box-shadow 0 0 12px gold
       transition-delay .2s
       // Fun Anime Center Bar
       // animation bar-character 1s

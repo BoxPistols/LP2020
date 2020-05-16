@@ -1,11 +1,52 @@
 .tex-anime
   &__og
-    background $cGray-light
-    padding .1rem
-    fx-c()
+    position relative
+    width 100%
+    height 300px
+    margin-top 2.4rem
+    // background $cGray
+  // &__og
   &__ml
+    position absolute
+    // height 300px
+    // width 100%
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+    fx-c()
     padding 2.4rem
+
+    // background $cGray-light
     font-family 'Comfortaa', cursive
     font-size 3.2rem
     font-weight 600
-    // color #000
+
+    >.char
+      letter-spacing 2px
+      opacity 0
+      transform scale(0)
+
+    &.is-anime
+      >.char
+        display inline-block
+        animation(
+          $name: tx_anim,
+          $duration: .5s,
+          $timing-function: cubic-bezier(0.54, 1.02, 0.49, 1.03),
+          $iteration-count: 1,
+          $fill-mode: forwards
+        )
+        for num in (1..9)
+          &:nth-child({num})
+            animation-delay (num * (0.04))s
+
+
+/*----------  Keyframes  ----------*/
+
+@keyframes tx_anim
+  0%
+    opacity 0
+    transform scale(0)
+  100%
+    opacity 1
+    transform scaleY(1)

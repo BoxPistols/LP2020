@@ -1,3 +1,19 @@
+.fx {
+  display: flex;
+}
+.fx-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fx-jc-e {
+  display: flex;
+  justify-content: flex-end;
+}
+.fx-ai-e {
+  display: flex;
+  align-items: flex-end;
+}
 .m_anime {
   display: flex;
   align-items: center;
@@ -10,9 +26,11 @@
   background-color: #ffc0cb;
   border: 4px solid #1c1d22;
   animation-name: dv_bounce;
-  animation-duration: 2s;
+  animation-duration: 1s;
+  animation-timing-function: ease;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
+  animation-timing-function: $timing;
 }
 .m_anime >.dv_rect-anime.paused {
   animation-play-state: paused;
@@ -52,7 +70,6 @@ p {
 .content {
   margin-bottom: 2.4rem;
   padding: 2.4rem;
-  background: #f6f6f6;
 }
 .content .section {
   margin: 2.4rem;
@@ -103,6 +120,13 @@ button.btn {
 /* Button UI hover Interaction 3D */
 /* Button UI hover Interaction 3D Cube */
 }
+button.btn:focus {
+  outline: none;
+  border: 2px solid #add8e6;
+}
+button.btn:active {
+  border-color: #ffa500;
+}
 button.btn.float:hover {
   cursor: pointer;
   color: #f9f9f9;
@@ -110,10 +134,6 @@ button.btn.float:hover {
   box-shadow: 2px 2px 5px 0px rgba(28,29,34,0.1);
   border-width: 0;
   transform: translate(2px, 2px);
-}
-button.btn.float:focus {
-  outline: none;
-  border: 2px solid #add8e6;
 }
 button.btn.slide-bgTx:before {
   content: "";
@@ -295,9 +315,11 @@ button.btn.btn-cube:focus {
   background: #1c1d22;
   border-radius: 50%;
   animation-name: loader-bounce;
-  animation-duration: 2s;
+  animation-duration: 1s;
+  animation-timing-function: ease;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
+  animation-timing-function: $timing;
 }
 .m_loader-dot >.bounce:nth-child(1) {
   animation-delay: 0.12s;
@@ -323,9 +345,11 @@ button.btn.btn-cube:focus {
   width: 50px;
   height: 50px;
   animation-name: sppier;
-  animation-duration: 2s;
+  animation-duration: 1s;
+  animation-timing-function: ease;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
+  animation-timing-function: $timing;
 }
 @keyframes dv_bounce {
   0%, 30% {
@@ -383,7 +407,7 @@ button.btn.btn-cube:focus {
 }
 .m_mobile-menu >span {
   display: block;
-  background-color: #1c1d22;
+  background-color: #444753;
   width: 35px;
   height: 4px;
   border-radius: 8px;
@@ -393,7 +417,7 @@ button.btn.btn-cube:focus {
   margin-bottom: 10px;
 }
 .m_mobile-menu >span:nth-child(2) {
-  background-color: #dc143c;
+  background-color: #b5b7c2;
 }
 .nav {
   visibility: hidden;
@@ -448,7 +472,7 @@ button.btn.btn-cube:focus {
   transform: translateY(14px) rotate(135deg);
 }
 .m_mobile-menu.menu-open >span:nth-child(2) {
-  box-shadow: 0 0 12px #ffd700;
+  background-color: #444753;
   transition-delay: 0.2s;
   transform: translateX(18px) scaleX(0);
 }
@@ -478,17 +502,74 @@ button.btn.btn-cube:focus {
   }
 }
 .tex-anime__og {
-  background: #b5b7c2;
-  padding: 0.1rem;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-top: 2.4rem;
+}
+.tex-anime__ml {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.tex-anime__ml {
   padding: 2.4rem;
   font-family: 'Comfortaa', cursive;
   font-size: 3.2rem;
   font-weight: 600;
+}
+.tex-anime__ml >.char {
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: scale(0);
+}
+.tex-anime__ml.is-anime >.char {
+  display: inline-block;
+  animation-name: tx_anim;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.54, 1.02, 0.49, 1.03);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: $timing;
+}
+.tex-anime__ml.is-anime >.char:nth-child(1) {
+  animation-delay: 0.04s;
+}
+.tex-anime__ml.is-anime >.char:nth-child(2) {
+  animation-delay: 0.08s;
+}
+.tex-anime__ml.is-anime >.char:nth-child(3) {
+  animation-delay: 0.12s;
+}
+.tex-anime__ml.is-anime >.char:nth-child(4) {
+  animation-delay: 0.16s;
+}
+.tex-anime__ml.is-anime >.char:nth-child(5) {
+  animation-delay: 0.2s;
+}
+.tex-anime__ml.is-anime >.char:nth-child(6) {
+  animation-delay: 0.24s;
+}
+.tex-anime__ml.is-anime >.char:nth-child(7) {
+  animation-delay: 0.28s;
+}
+.tex-anime__ml.is-anime >.char:nth-child(8) {
+  animation-delay: 0.32s;
+}
+.tex-anime__ml.is-anime >.char:nth-child(9) {
+  animation-delay: 0.36s;
+}
+@keyframes tx_anim {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
 }
 .rect {
   display: flex;

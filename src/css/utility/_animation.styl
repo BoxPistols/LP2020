@@ -6,16 +6,29 @@ $anmSlow = .4s
 /*----------  Animation Global Function ----------*/
 animation(
     $name,
-    $duration = 2s,
+    $duration = 1s,
+    $timing-function = ease,
     $iteration-count = 1, // infinite
-    $fill-mode = forwards
+    $fill-mode = forwards,
   ){
     animation-name $name
     animation-duration $duration
+    animation-timing-function: $timing-function
     animation-iteration-count $iteration-count
     animation-fill-mode $fill-mode
+    animation-timing-function $timing
 }
 
+/*
+  animation dv_bounce 1s infinite
+  animation dv_bounce 1.5s
+  animation-timing-function ease-in-out
+  animation-delay 2s
+  animation-iteration-count infinite
+  animation-direction alternate
+  animation-fill-mode forwards
+  transform scale(1)
+*/
 .m_anime
   fx-c()
   margin-top 2.4rem
