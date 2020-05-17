@@ -5,6 +5,9 @@ html(lang="ja")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
     title LP2020
+
+    link(rel='stylesheet', href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600&display=swap")
+
     link(rel='stylesheet', href="css/style.css")
     //- GA
       script.
@@ -23,11 +26,18 @@ html(lang="ja")
           .l_menu
             include html/_mobile-menu
 
-        .content
-          include html/_button
+        //- .content
+        //-   include html/_button
 
         .content
-          include html/_loader-dot
+          //- include html/_loader-dot
+          //- include html/_anime-text
+          include  html/_anime-contents
+
+        //- .content
+        //-   div content
+        //- .content
+        //-   div content
 
     //- include html/_footer
     script(src="js/app.js")

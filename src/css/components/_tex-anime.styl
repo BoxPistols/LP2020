@@ -1,0 +1,45 @@
+.tex-anime
+  &__og
+    margin-top 2.4rem
+    background azure
+  // &__og
+  &__ml
+    fx-c()
+    padding 2.4rem
+    font-family 'Comfortaa', cursive
+    font-size 3.2rem
+    font-weight 600
+
+    >.char
+      letter-spacing 2px
+      color navy
+      opacity 0
+      transform scale(0)
+
+    &.is-anime
+      >.char
+        display inline-block
+        animation(
+          $name: tx_anim,
+          $duration: .5s,
+          $timing-function: cubic-bezier(0.5, 1, 0.5, 1),
+          $iteration-count: 1,
+          $fill-mode: both
+        )
+        for num in (1..9)
+          &:nth-child({num})
+            animation-delay (num * (0.04))s
+
+
+/*----------  Keyframes  ----------*/
+
+@keyframes tx_anim
+  0%
+    opacity 0
+    // transform scale(0)
+    transform translateY(-50%)
+
+  100%
+    opacity 1
+    transform scale(1)
+    transform translateY(0%)

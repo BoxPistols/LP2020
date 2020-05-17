@@ -1,5 +1,50 @@
 # LP2020
 
+
+## Tree
+
+```js
+$ tree -I '*node_modules'
+.
+|-- README.md
+|-- dist
+|   |-- css
+|   |   `-- style.css
+|   |-- index.html
+|   `-- js
+|       |-- app.js
+|       `-- app.js.map
+|-- package.json
+|-- prepros.config
+|-- src
+|   |-- css
+|   |   |-- components
+|   |   |   |-- _button.styl
+|   |   |   |-- _loader.styl
+|   |   |   |-- _mobile-menu.styl
+|   |   |   `-- _transrate-rect.styl
+|   |   |-- setting
+|   |   |   `-- _base.styl
+|   |   |-- style.styl
+|   |   `-- utility
+|   |       |-- _animation.styl
+|   |       |-- _block.styl
+|   |       |-- _color.styl
+|   |       |-- _utility-mixin.styl
+|   |       `-- _valiable.styl
+|   |-- html
+|   |   |-- _button.pug
+|   |   |-- _footer.pug
+|   |   |-- _loader-dot.pug
+|   |   `-- _mobile-menu.pug
+|   |-- index.pug
+|   `-- js
+|       `-- app.js
+`-- yarn.lock
+```
+
+---
+
 ## Code BackUp
 
 ### transform

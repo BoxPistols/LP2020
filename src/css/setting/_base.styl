@@ -9,7 +9,9 @@ html
 body
   font-size 1.6rem
   color $cBlack
-  font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  // font-family 'Comfortaa', cursive
+  font-family 'Comfortaa', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  overflow-x hidden
 
 a
   text-decoration none
@@ -25,6 +27,11 @@ li
 p
   line-height 1.5
 
+img
+  max-width 100%
+  // max-width: calc(100% / 3)
+  vertical-align: bottom
+
 .wrap
   min-height 100vh
   padding 24px
@@ -32,17 +39,17 @@ p
 .content
   margin-bottom 2.4rem
   padding 2.4rem
-  background lighten(lightgray, 80%)
+  // background lighten(lightgray, 80%)
   .section
     margin 2.4rem
 
 .footer_org
   display block
   width 100%
-  position absolute
+  position fixed
   bottom 0
   padding .8rem
-  background #eee
+  background rgba($cGray,.2)
   fx-c()
   .footer_mol
     color $cGray
@@ -50,7 +57,7 @@ p
     font-size 1.2rem
 
 header
-  fx-j-e()
+  fx-jc-e()
   margin-bottom 1.6rem
 
 cap.cap

@@ -1,3 +1,19 @@
+.fx {
+  display: flex;
+}
+.fx-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fx-jc-e {
+  display: flex;
+  justify-content: flex-end;
+}
+.fx-ai-e {
+  display: flex;
+  align-items: flex-end;
+}
 .m_anime {
   display: flex;
   align-items: center;
@@ -9,32 +25,15 @@
   height: 150px;
   background-color: #ffc0cb;
   border: 4px solid #1c1d22;
-  animation-name: dv_bounce2;
-  animation-duration: 2s;
+  animation-name: dv_bounce;
+  animation-duration: 1s;
+  animation-timing-function: ease;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
+  animation-timing-function: $timing;
 }
 .m_anime >.dv_rect-anime.paused {
   animation-play-state: paused;
-}
-@keyframes dv_bounce {
-  0%, 30% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes dv_bounce2 {
-  0% {
-    background-color: #ffa500;
-    transform: scale(0);
-  }
-  100% {
-    background-color: #008080;
-    transform: scale(1);
-    border-radius: 50%;
-  }
 }
 * {
   margin: 0;
@@ -47,7 +46,8 @@ html {
 body {
   font-size: 1.6rem;
   color: #1c1d22;
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: 'Comfortaa', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -64,6 +64,10 @@ li {
 p {
   line-height: 1.5;
 }
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
 .wrap {
   min-height: 100vh;
   padding: 24px;
@@ -71,7 +75,6 @@ p {
 .content {
   margin-bottom: 2.4rem;
   padding: 2.4rem;
-  background: #f6f6f6;
 }
 .content .section {
   margin: 2.4rem;
@@ -79,10 +82,10 @@ p {
 .footer_org {
   display: block;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   padding: 0.8rem;
-  background: #eee;
+  background: rgba(68,71,83,0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,6 +106,85 @@ cap.cap {
   line-height: 2;
   padding: 0.4rem;
 }
+.anime-contents__ly .anime-action-name__ml {
+  margin: 1.6rem auto;
+}
+.anime-contents__ly .anime-action-name__ml p {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+.anime-contents__ly .btn {
+  margin: 0 2.4rem 2.4rem 0;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.appear .item {
+  max-width: calc(100% / 4);
+  opacity: 0;
+  transition: all 0.8s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.up .item {
+  transform: translateY(12px);
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.down .item {
+  transform: translateY(-12px);
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.left .item {
+  transform: translateX(44px);
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.right .item {
+  transform: translateX(-44px);
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item {
+  transform: none;
+  opacity: 1;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(1) {
+  transition-delay: 0.04s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(2) {
+  transition-delay: 0.08s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(3) {
+  transition-delay: 0.12s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(4) {
+  transition-delay: 0.16s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(5) {
+  transition-delay: 0.2s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(6) {
+  transition-delay: 0.24s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(7) {
+  transition-delay: 0.28s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(8) {
+  transition-delay: 0.32s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(9) {
+  transition-delay: 0.36s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(10) {
+  transition-delay: 0.4s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(11) {
+  transition-delay: 0.44s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(12) {
+  transition-delay: 0.48s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(13) {
+  transition-delay: 0.52s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(14) {
+  transition-delay: 0.56s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(15) {
+  transition-delay: 0.6s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(16) {
+  transition-delay: 0.64s;
+}
 button.btn {
   position: relative;
   font-size: 1.6rem;
@@ -122,6 +204,13 @@ button.btn {
 /* Button UI hover Interaction 3D */
 /* Button UI hover Interaction 3D Cube */
 }
+button.btn:focus {
+  outline: none;
+  border: 2px solid #add8e6;
+}
+button.btn:active {
+  border-color: #ffa500;
+}
 button.btn.float:hover {
   cursor: pointer;
   color: #f9f9f9;
@@ -129,10 +218,6 @@ button.btn.float:hover {
   box-shadow: 2px 2px 5px 0px rgba(28,29,34,0.1);
   border-width: 0;
   transform: translate(2px, 2px);
-}
-button.btn.float:focus {
-  outline: none;
-  border: 2px solid #add8e6;
 }
 button.btn.slide-bgTx:before {
   content: "";
@@ -309,20 +394,65 @@ button.btn.btn-cube:focus {
 }
 .m_loader-dot >.bounce {
   display: inline-flex;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   background: #1c1d22;
   border-radius: 50%;
   animation-name: loader-bounce;
-  animation-duration: 1.2s;
+  animation-duration: 1s;
+  animation-timing-function: ease;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
+  animation-timing-function: $timing;
 }
-.m_loader-dot >.bounce.b-1 {
-  animation-delay: -0.32s;
+.m_loader-dot >.bounce:nth-child(1) {
+  animation-delay: 0.12s;
 }
-.m_loader-dot >.bounce.b-2 {
-  animation-delay: -0.16s;
+.m_loader-dot >.bounce:nth-child(2) {
+  animation-delay: 0.24s;
+}
+.m_loader-dot >.bounce:nth-child(3) {
+  animation-delay: 0.36s;
+}
+.m_loader-dot >.bounce:nth-child(4) {
+  animation-delay: 0.48s;
+}
+.m_loader-dot >.bounce:nth-child(5) {
+  animation-delay: 0.6s;
+}
+.m_loader-3d {
+  perspective: 100px;
+}
+.m_loader-3d .a_loader-3d {
+  margin: 50px auto;
+  background: linear-gradient(135deg, #020024 0%, #090979 35%, #00d4ff 100%);
+  width: 50px;
+  height: 50px;
+  animation-name: sppier;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: $timing;
+}
+@keyframes dv_bounce {
+  0%, 30% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes dv_bounce2 {
+  0% {
+    background-color: #ffa500;
+    transform: scale(0);
+  }
+  100% {
+    background-color: #008080;
+    transform: scale(1);
+    border-radius: 50%;
+  }
 }
 @keyframes loader-bounce {
   0% {
@@ -338,6 +468,17 @@ button.btn.btn-cube:focus {
     transform: scale(0);
   }
 }
+@keyframes sppier {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: rotateX(-180deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(-180deg) rotateY(180deg);
+  }
+}
 .m_mobile-menu {
   background-color: transparent;
   border: none;
@@ -350,20 +491,23 @@ button.btn.btn-cube:focus {
 }
 .m_mobile-menu >span {
   display: block;
-  background-color: #1c1d22;
+  background-color: #444753;
   width: 35px;
   height: 4px;
   border-radius: 8px;
-  transition: all 1s;
+  transition: all 0.4s;
 }
 .m_mobile-menu >span:not(:last-child) {
   margin-bottom: 10px;
 }
 .m_mobile-menu >span:nth-child(2) {
-  background-color: #dc143c;
+  background-color: #b5b7c2;
 }
 .nav {
-  display: none;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .nav ul {
   position: absolute;
@@ -374,24 +518,35 @@ button.btn.btn-cube:focus {
 }
 .nav ul li a {
   font-size: 4rem;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s;
 }
-.overlay.menu-open {
+.nav ul li a:hover {
+  background-color: #1c1d22;
+}
+.nav.menu-open {
+  visibility: visible;
+}
+.overlay {
   background-color: rgba(28,29,34,0.5);
-  display: block;
+  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   z-index: 2;
+  opacity: 0;
+  transition: 0.4s;
 }
-.overlay.menu-open +.container .l_menu {
+.overlay.menu-open {
+  visibility: visible;
+  opacity: 1;
+}
+.overlay +.container .l_menu {
   z-index: 10;
-}
-.overlay.menu-open +.container .l_menu .nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .m_mobile-menu.menu-open >span {
   background-color: #f9f9f9;
@@ -401,14 +556,9 @@ button.btn.btn-cube:focus {
   transform: translateY(14px) rotate(135deg);
 }
 .m_mobile-menu.menu-open >span:nth-child(2) {
-  background-color: #ffd700;
-  box-shadow: 0 0 12px #ffd700;
+  background-color: #444753;
   transition-delay: 0.2s;
-  animation-name: bar-character;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
-  transform: translateX(18px) scaleX(0) rotate(360deg);
+  transform: translateX(18px) scaleX(0);
 }
 .m_mobile-menu.menu-open >span:nth-child(3) {
   transition-delay: 0.1s;
@@ -433,6 +583,72 @@ button.btn.btn-cube:focus {
     transform: translateY(-12px) translateX(18px) scaleX(0) rotate(720deg);
     width: 17.5px;
     height: 4px;
+  }
+}
+.tex-anime__og {
+  margin-top: 2.4rem;
+  background: #f0ffff;
+}
+.tex-anime__ml {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.4rem;
+  font-family: 'Comfortaa', cursive;
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+.tex-anime__ml >.char {
+  letter-spacing: 2px;
+  color: #000080;
+  opacity: 0;
+  transform: scale(0);
+}
+.tex-anime__ml.is-anime >.char {
+  display: inline-block;
+  animation-name: tx_anim;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.5, 1, 0.5, 1);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-timing-function: $timing;
+}
+.tex-anime__ml.is-anime >.char:nth-child(1) {
+  animation-delay: 0.04s;
+}
+.tex-anime__ml.is-anime >.char:nth-child(2) {
+  animation-delay: 0.08s;
+}
+.tex-anime__ml.is-anime >.char:nth-child(3) {
+  animation-delay: 0.12s;
+}
+.tex-anime__ml.is-anime >.char:nth-child(4) {
+  animation-delay: 0.16s;
+}
+.tex-anime__ml.is-anime >.char:nth-child(5) {
+  animation-delay: 0.2s;
+}
+.tex-anime__ml.is-anime >.char:nth-child(6) {
+  animation-delay: 0.24s;
+}
+.tex-anime__ml.is-anime >.char:nth-child(7) {
+  animation-delay: 0.28s;
+}
+.tex-anime__ml.is-anime >.char:nth-child(8) {
+  animation-delay: 0.32s;
+}
+.tex-anime__ml.is-anime >.char:nth-child(9) {
+  animation-delay: 0.36s;
+}
+@keyframes tx_anim {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    transform: translateY(0%);
   }
 }
 .rect {

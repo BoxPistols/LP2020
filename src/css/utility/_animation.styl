@@ -3,19 +3,32 @@ $anmFast = .2s
 $anmNormal = .3s
 $anmSlow = .4s
 
-/*----------  Animation Test  ----------*/
+/*----------  Animation Global Function ----------*/
 animation(
     $name,
-    $duration = 2s,
-    $infinite = infinite,
-    $fill-mode = forwards
+    $duration = 1s,
+    $timing-function = ease,
+    $iteration-count = 1, // infinite
+    $fill-mode = forwards,
   ){
     animation-name $name
     animation-duration $duration
-    animation-iteration-count $infinite
+    animation-timing-function: $timing-function
+    animation-iteration-count $iteration-count
     animation-fill-mode $fill-mode
+    animation-timing-function $timing
 }
 
+/*
+  animation dv_bounce 1s infinite
+  animation dv_bounce 1.5s
+  animation-timing-function ease-in-out
+  animation-delay 2s
+  animation-iteration-count infinite
+  animation-direction alternate
+  animation-fill-mode forwards
+  transform scale(1)
+*/
 .m_anime
   fx-c()
   margin-top 2.4rem
@@ -26,30 +39,8 @@ animation(
     background-color pink
     border 4px solid $cBlack
     animation(
-      $name: dv_bounce2
+      $name: dv_bounce,
+      $iteration-count: infinite
     )
-    // animation dv_bounce 1s infinite
-    // animation dv_bounce 1.5s
-    // animation-timing-function ease-in-out
-    // animation-delay 2s
-    // animation-iteration-count infinite
-    // animation-direction alternate
-    // animation-fill-mode forwards
-    // transform scale(1)
     &.paused
       animation-play-state paused
-
-@keyframes dv_bounce
-  0%,30%
-    transform scale(0)
-  100%
-    transform scale(1)
-
-@keyframes dv_bounce2
-  0%
-    background-color orange
-    transform scale(0)
-  100%
-    background-color teal
-    transform scale(1)
-    border-radius 50%
