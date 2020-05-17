@@ -47,6 +47,7 @@ body {
   font-size: 1.6rem;
   color: #1c1d22;
   font-family: 'Comfortaa', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -63,6 +64,10 @@ li {
 p {
   line-height: 1.5;
 }
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
 .wrap {
   min-height: 100vh;
   padding: 24px;
@@ -77,10 +82,10 @@ p {
 .footer_org {
   display: block;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   padding: 0.8rem;
-  background: #eee;
+  background: rgba(68,71,83,0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,6 +105,85 @@ cap.cap {
   color: #444753;
   line-height: 2;
   padding: 0.4rem;
+}
+.anime-contents__ly .anime-action-name__ml {
+  margin: 1.6rem auto;
+}
+.anime-contents__ly .anime-action-name__ml p {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+.anime-contents__ly .btn {
+  margin: 0 2.4rem 2.4rem 0;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.appear .item {
+  max-width: calc(100% / 4);
+  opacity: 0;
+  transition: all 0.8s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.up .item {
+  transform: translateY(12px);
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.down .item {
+  transform: translateY(-12px);
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.left .item {
+  transform: translateX(44px);
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.right .item {
+  transform: translateX(-44px);
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item {
+  transform: none;
+  opacity: 1;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(1) {
+  transition-delay: 0.04s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(2) {
+  transition-delay: 0.08s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(3) {
+  transition-delay: 0.12s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(4) {
+  transition-delay: 0.16s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(5) {
+  transition-delay: 0.2s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(6) {
+  transition-delay: 0.24s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(7) {
+  transition-delay: 0.28s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(8) {
+  transition-delay: 0.32s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(9) {
+  transition-delay: 0.36s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(10) {
+  transition-delay: 0.4s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(11) {
+  transition-delay: 0.44s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(12) {
+  transition-delay: 0.48s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(13) {
+  transition-delay: 0.52s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(14) {
+  transition-delay: 0.56s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(15) {
+  transition-delay: 0.6s;
+}
+.anime-contents__ly .anime-contents__og .anime-contents__ml.inview .item:nth-child(16) {
+  transition-delay: 0.64s;
 }
 button.btn {
   position: relative;
@@ -559,11 +643,12 @@ button.btn.btn-cube:focus {
 @keyframes tx_anim {
   0% {
     opacity: 0;
-    transform: scale(0);
+    transform: translateY(-50%);
   }
   100% {
     opacity: 1;
-    transform: scaleY(1);
+    transform: scale(1);
+    transform: translateY(0%);
   }
 }
 .rect {

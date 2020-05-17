@@ -1,0 +1,42 @@
+$patten = {
+  up: translateY(12px),
+  down: translateY(-12px),
+  left: translateX(44px),
+  right: translateX(-44px)
+}
+
+.anime-contents__ly
+  .anime-action-name__ml
+    margin 1.6rem auto
+    p
+      font-size 2.4rem
+      font-weight 600
+  .btn
+    margin 0 2.4rem 2.4rem 0
+  .anime-contents__og
+    .anime-contents__ml
+        &.appear
+          .item
+            max-width calc(100% / 4)
+            opacity .0
+            transition all .8s
+        &.up
+          .item
+            transform: $patten.up
+        &.down
+          .item
+            transform: $patten.down
+        &.left
+          .item
+            transform: $patten.left
+        &.right
+          .item
+            transform: $patten.right
+        &.inview
+          .item
+            transform none
+            opacity 1
+            for num in (1..16)
+              &:nth-child({num})
+                transition-delay (num * (0.04))s
+
