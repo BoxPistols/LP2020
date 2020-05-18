@@ -1,20 +1,30 @@
 .image-contents__lay
   .image-contents__og
     .image-contents__ml
+      .heading
+        margin-top 4rem
+        font-size 2.4rem
+        font-weight 600
+        color $cGray
+      .images, .bg-img, .responsive-img, .retina-img
+        margin-top 2rem
       .images
-        padding 2rem
-        background $cGray-light
+        // background $cGray-light
         img
           width 500px
           height 200px
           object-fit cover // NOTE: can not IE11
         .bg-img
-          margin-top 2rem
           // background-image url("https://dummyimage.com/600x400/4794b8/fff.jpg") no-repeat center
-          background-image url("https://dummyimage.com/600x400/4794b8/fff.jpg")
+          background-image url("https://dummyimage.com/640x480/4794b8/fff.jpg")
           background-repeat no-repeat
           background-size contain
           // background-size cover
           background-position: left 50% bottom 50%
-          width 500px
-          height 200px
+          max-width 640px
+          width 100%
+          height 320px
+          @media screen and (min-width 640px)
+            background-image url("https://dummyimage.com/1280x800/4794b8/fff.jpg")
+            max-width 640px
+            height 320px

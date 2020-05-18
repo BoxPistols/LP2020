@@ -2,7 +2,28 @@
   .image-contents__og
     .image-contents__ml
       .images.fx-col.fx-c
-
+        //- HTML画像
+        .heading HTML画像
         img.img(src="https://dummyimage.com/600x400/4794b8/fff.jpg", alt="")
 
+        //- 背景画僧
+        .heading 背景画僧
         .bg-img
+
+        //-レスポンシブ画像 HTMLのみで実装
+        .heading レスポンシブ画像 HTMLのみで実装
+        .responsive-img
+          picture
+            source(srcset='https://dummyimage.com/1280x768/4794b8/fff.jpg', media='(min-width: 1280px)')
+
+            source(srcset='https://dummyimage.com/768x480/4794b8/fff.jpg', media='(min-width: 768px)')
+
+            //-　Default Size & IE11
+            img(srcset='https://dummyimage.com/480x320/4794b8/fff.jpg', alt='…')
+
+        .heading Retina
+        .retina-img
+          //- img(src='img/example-img.jpg', srcset='img/example-img-320.jpg 320w,\
+          //- img/example-img-640.jpg 640w', alt='Example image')
+          img(src='https://dummyimage.com/480x360/4794b8/fff.jpg',
+          srcset='https://dummyimage.com/320x200/4794b8/fff.jpg 320w, https://dummyimage.com/640x400/4794b8/fff.jpg 640w'  sizes="50vw")
