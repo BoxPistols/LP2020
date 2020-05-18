@@ -1,3 +1,4 @@
 node_modules
+dist
 
-# prepros.config
+prepros.config
