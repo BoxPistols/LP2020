@@ -14,6 +14,10 @@
   display: flex;
   align-items: flex-end;
 }
+.fx-col {
+  display: flex;
+  flex-direction: column;
+}
 .m_anime {
   display: flex;
   align-items: center;
@@ -388,6 +392,39 @@ button.btn.btn-cube:focus {
 .answer .btn.cubics:hover .default {
   opacity: 0;
   transform: rotateX(-90deg);
+}
+.image-contents__lay .image-contents__og .image-contents__ml .heading {
+  margin-top: 4rem;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #444753;
+}
+.image-contents__lay .image-contents__og .image-contents__ml .images,
+.image-contents__lay .image-contents__og .image-contents__ml .bg-img,
+.image-contents__lay .image-contents__og .image-contents__ml .responsive-img,
+.image-contents__lay .image-contents__og .image-contents__ml .retina-img {
+  margin-top: 2rem;
+}
+.image-contents__lay .image-contents__og .image-contents__ml .images img {
+  width: 500px;
+  height: 200px;
+  object-fit: cover;
+}
+.image-contents__lay .image-contents__og .image-contents__ml .images .bg-img {
+  background-image: url("https://dummyimage.com/640x480/4794b8/fff.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left 50% bottom 50%;
+  max-width: 640px;
+  width: 100%;
+  height: 320px;
+}
+@media screen and (min-width: 640px) {
+  .image-contents__lay .image-contents__og .image-contents__ml .images .bg-img {
+    background-image: url("https://dummyimage.com/1280x800/4794b8/fff.jpg");
+    max-width: 640px;
+    height: 320px;
+  }
 }
 .m_loader-dot {
   text-align: center;
