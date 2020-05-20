@@ -2,12 +2,12 @@
   &__mol
     position relative
     overflow hidden
-    img.item
+    .item
       width 100%
       transform scale(1)
       opacity 0
     &.inview
-      img.item
+      .item
         opacity 1
         animation(
           $name: key__img-zoom,
@@ -16,6 +16,41 @@
           $iteration-count: 1,
           $fill-mode: normal
         )
+        transition $anmSlow ease-in-out
+        &:hover
+          cursor pointer
+          transform scale(1.3)
+
+      .bg-img-zoom
+        overflow hidden
+        margin-top 2rem
+        background-image url('https://dummyimage.com/1200x600/4794b8/fff.jpg')
+        background-size cover
+        background-repeat no-repeat
+        background-position center
+        width 100%
+        // height 200px
+        padding-top 50%
+
+        animation(
+          $name: key__img-zoom,
+          $duration: 1.6s,
+          $timing-function: ease-in-out,
+          $iteration-count: 1,
+          $fill-mode: normal
+        )
+
+        &:after
+          animation(
+            $name: key__cover-slide,
+            $duration: 1.6s,
+            $timing-function: ease-in-out,
+            $iteration-count: 1
+          )
+          psd()
+          background $cGray
+          overflow hidden
+
       &:after
         animation(
           $name: key__cover-slide,
@@ -24,7 +59,19 @@
           $iteration-count: 1
         )
         psd()
-        background azure
+        background $cGray
+
+.hover-darken
+  &:before
+    psd()
+    width 100%
+    height 100%
+    z-index 2
+    transition background-color $anmNormal ease
+    pointer-events none
+  &:hover:before
+    cp()
+    background-color rgba(0, 0, 0, .3)
 
 @keyframes key__cover-slide
   0%
