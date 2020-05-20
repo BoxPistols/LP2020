@@ -14,6 +14,10 @@
   display: flex;
   align-items: flex-end;
 }
+.fx-col {
+  display: flex;
+  flex-direction: column;
+}
 .m_anime {
   display: flex;
   align-items: center;
@@ -30,7 +34,6 @@
   animation-timing-function: ease;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
-  animation-timing-function: $timing;
 }
 .m_anime >.dv_rect-anime.paused {
   animation-play-state: paused;
@@ -389,6 +392,39 @@ button.btn.btn-cube:focus {
   opacity: 0;
   transform: rotateX(-90deg);
 }
+.image-contents__lay .image-contents__og .image-contents__ml .heading {
+  margin-top: 4rem;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #444753;
+}
+.image-contents__lay .image-contents__og .image-contents__ml .images,
+.image-contents__lay .image-contents__og .image-contents__ml .bg-img,
+.image-contents__lay .image-contents__og .image-contents__ml .responsive-img,
+.image-contents__lay .image-contents__og .image-contents__ml .retina-img {
+  margin-top: 2rem;
+}
+.image-contents__lay .image-contents__og .image-contents__ml .images img {
+  width: 500px;
+  height: 200px;
+  object-fit: cover;
+}
+.image-contents__lay .image-contents__og .image-contents__ml .images .bg-img {
+  background-image: url("https://dummyimage.com/640x480/4794b8/fff.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left 50% bottom 50%;
+  max-width: 640px;
+  width: 100%;
+  height: 320px;
+}
+@media screen and (min-width: 640px) {
+  .image-contents__lay .image-contents__og .image-contents__ml .images .bg-img {
+    background-image: url("https://dummyimage.com/1280x800/4794b8/fff.jpg");
+    max-width: 640px;
+    height: 320px;
+  }
+}
 .m_loader-dot {
   text-align: center;
 }
@@ -403,7 +439,6 @@ button.btn.btn-cube:focus {
   animation-timing-function: ease;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
-  animation-timing-function: $timing;
 }
 .m_loader-dot >.bounce:nth-child(1) {
   animation-delay: 0.12s;
@@ -433,7 +468,6 @@ button.btn.btn-cube:focus {
   animation-timing-function: ease;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
-  animation-timing-function: $timing;
 }
 @keyframes dv_bounce {
   0%, 30% {
@@ -585,6 +619,67 @@ button.btn.btn-cube:focus {
     height: 4px;
   }
 }
+.slide-image__mol {
+  position: relative;
+  overflow: hidden;
+}
+.slide-image__mol img.item {
+  width: 100%;
+  transform: scale(1);
+  opacity: 0;
+}
+.slide-image__mol.inview img.item {
+  opacity: 1;
+  animation-name: key__img-zoom;
+  animation-duration: 1.6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: normal;
+}
+.slide-image__mol.inview:after {
+  animation-name: key__cover-slide;
+  animation-duration: 1.6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f0ffff;
+}
+@keyframes key__cover-slide {
+  0% {
+    left: 0%;
+    right: 100%;
+  }
+  50% {
+    left: 0%;
+    right: 0%;
+  }
+  100% {
+    left: 100%;
+    right: 0%;
+  }
+}
+@keyframes key__img-zoom {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .tex-anime__og {
   margin-top: 2.4rem;
   background: #f0ffff;
@@ -611,7 +706,6 @@ button.btn.btn-cube:focus {
   animation-timing-function: cubic-bezier(0.5, 1, 0.5, 1);
   animation-iteration-count: 1;
   animation-fill-mode: both;
-  animation-timing-function: $timing;
 }
 .tex-anime__ml.is-anime >.char:nth-child(1) {
   animation-delay: 0.04s;
