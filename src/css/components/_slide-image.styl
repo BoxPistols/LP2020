@@ -4,6 +4,7 @@
     overflow hidden
     img.item
       width 100%
+      min-height: 100%
       transform scale(1)
       opacity 0
     &.inview
@@ -11,20 +12,77 @@
         opacity 1
         animation(
           $name: key__img-zoom,
+          $duration: 2.4s,
+          $timing-function: ease-in-out,
+          $iteration-count: 1,
+          $fill-mode: normal
+        )
+        transition $anmSlow ease-in-out
+        &:hover
+          cursor pointer
+          transform scale(1.3)
+
+      &:after
+        animation(
+          $name: key__cover-slide-trans,
+          $duration: 2.4s,
+          $timing-function: ease-in-out,
+          $iteration-count: 1
+        )
+        psd()
+        background $cGray
+
+      //- 背景画像演出
+      .bg-img-zoom
+        overflow hidden
+        margin-top 2rem
+        background-image url('https://picsum.photos/1200/800/?image=1043')
+        background-size cover
+        background-repeat no-repeat
+        background-position center
+        width 100%
+        // height 200px
+        padding-top 50%
+
+        animation(
+          $name: key__img-zoom,
           $duration: 1.6s,
           $timing-function: ease-in-out,
           $iteration-count: 1,
           $fill-mode: normal
         )
-      &:after
-        animation(
-          $name: key__cover-slide,
-          $duration: 1.6s,
-          $timing-function: ease-in-out,
-          $iteration-count: 1
-        )
-        psd()
-        background azure
+
+        &:after
+          animation(
+            $name: key__cover-slide,
+            $duration: 1.6s,
+            $timing-function: ease-in-out,
+            $iteration-count: 1
+          )
+          psd()
+          background $cGray
+          opacity 0
+          overflow hidden
+      //- End// 背景画像演出
+
+.hover-darken
+  &:before
+    psd()
+    width 100%
+    height 100%
+    z-index 2
+    pointer-events none
+    transition all $anmSlow ease
+    // hover text
+    fx-c()
+    content: "PickUp Message..."
+    font-size calc(2.4rem + 4vw)
+    color transparent
+  &:hover:before
+    cp()
+    background-color rgba(0, 0, 0, .3)
+    color  rgba(255, 255, 255, .85)
+
 
 @keyframes key__cover-slide
   0%
@@ -36,6 +94,21 @@
   100%
     left 100%
     right 0%
+
+// Refact Animation
+@keyframes key__cover-slide-trans
+  0%
+    transform-origin left
+    transform: scaleX(0)
+  50%
+    transform-origin left
+    transform: scaleX(1)
+  50.1%
+    transform-origin right
+    transform: scaleX(1)
+  100%
+    transform-origin right
+    transform: scaleX(0)
 
 @keyframes key__img-zoom
   0%
