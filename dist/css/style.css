@@ -623,27 +623,28 @@ button.btn.btn-cube:focus {
   position: relative;
   overflow: hidden;
 }
-.slide-image__mol .item {
+.slide-image__mol img.item {
   width: 100%;
+  min-height: 100%;
   transform: scale(1);
   opacity: 0;
 }
-.slide-image__mol.inview .item {
+.slide-image__mol.inview img.item {
   opacity: 1;
   animation-name: key__img-zoom;
-  animation-duration: 1.6s;
+  animation-duration: 2.4s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
   animation-fill-mode: normal;
   transition: 0.4s ease-in-out;
 }
-.slide-image__mol.inview .item:hover {
+.slide-image__mol.inview img.item:hover {
   cursor: pointer;
   transform: scale(1.3);
 }
 .slide-image__mol.inview:after {
   animation-name: key__cover-slide-trans;
-  animation-duration: 1.6s;
+  animation-duration: 2.4s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;

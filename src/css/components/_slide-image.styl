@@ -2,16 +2,17 @@
   &__mol
     position relative
     overflow hidden
-    .item
+    img.item
       width 100%
+      min-height: 100%
       transform scale(1)
       opacity 0
     &.inview
-      .item
+      img.item
         opacity 1
         animation(
           $name: key__img-zoom,
-          $duration: 1.6s,
+          $duration: 2.4s,
           $timing-function: ease-in-out,
           $iteration-count: 1,
           $fill-mode: normal
@@ -24,7 +25,7 @@
       &:after
         animation(
           $name: key__cover-slide-trans,
-          $duration: 1.6s,
+          $duration: 2.4s,
           $timing-function: ease-in-out,
           $iteration-count: 1
         )
@@ -81,6 +82,7 @@
     cp()
     background-color rgba(0, 0, 0, .3)
     color  rgba(255, 255, 255, .85)
+
 
 @keyframes key__cover-slide
   0%
