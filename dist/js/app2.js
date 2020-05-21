@@ -106,10 +106,10 @@ const r = _x => {
 
 
 const hello = function hello(x) {
-  r(x + "さん");
+  r(x + "さん!");
 };
 
-hello("もん!");
+hello("佐々波");
 r(`<br>`);
 /*----------  Object  ----------*/
 
@@ -128,6 +128,14 @@ const person = {
 r(person.name[1] + '!!');
 r(`<br>`);
 person.getName();
+r(`<br>`);
+/*----------  Loop  ----------*/
+
+const array = [1, 2, 3, 4, 5, 6, 7];
+
+for (let i = 0; i < array.length; i++) {
+  r(array[i]);
+}
 
 /***/ })
 /******/ ]);

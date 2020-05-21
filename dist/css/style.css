@@ -430,6 +430,7 @@ button.btn.btn-cube:focus {
   padding: 2.4rem;
   font-size: 2.4rem;
   font-weight: 600;
+  line-height: 1.8;
   border: 2px solid #dadbe1;
   border-radius: 12px;
 }
