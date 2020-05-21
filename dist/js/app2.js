@@ -88,14 +88,28 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-{
-  // アイコンクラスに.onclickイベントを追加
-  document.querySelector(".m_mobile-menu").onclick = function () {
-    document.querySelector(".overlay").classList.toggle("menu-open");
-    document.querySelector(".nav").classList.toggle("menu-open");
-    this.classList.toggle("menu-open");
-  };
-}
+/* =============================================
+=            開発用変数・関数
+ * =
+=============================================
+ */
+const el = document.querySelector('.is-debug .org .mol');
+
+const r = _x => {
+  return `${el.insertAdjacentHTML('beforeend', `${_x}`)}`;
+};
+/*=====  End 開発用メソッド  ======*/
+
+/* function hello(x){
+  r(x + "さん")
+} */
+
+
+const hello = function hello(x) {
+  r(x + "さん");
+};
+
+hello("もん!");
 
 /***/ })
 /******/ ]);

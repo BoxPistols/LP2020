@@ -425,6 +425,14 @@ button.btn.btn-cube:focus {
     height: 320px;
   }
 }
+.is-debug .org .mol {
+  margin-top: 2.4rem;
+  padding: 2.4rem;
+  font-size: 2.4rem;
+  font-weight: 600;
+  border: 2px solid #dadbe1;
+  border-radius: 12px;
+}
 .m_loader-dot {
   text-align: center;
 }
