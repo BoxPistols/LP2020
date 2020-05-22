@@ -170,3 +170,30 @@ for (i in todos) {
     r(`Done! ` + todo.title + `<br>`)
   }
 }
+
+sub(`条件検出 boolean`)
+/*
+ * !で否定
+*/
+if(1 === '1'){
+  r(`== true / 型問わず`)
+} else {
+  r(`=== 型も完全一致`)
+}
+
+r(br)
+
+sub(`真偽判定 ＋ 変数`)
+// 真偽判定
+const num = 1 // 0だとfalse
+const bool = Boolean(num) // 真偽関数
+r(bool)
+
+r(br)
+
+sub(`真偽判定 + 条件分岐連動`)
+if(num){
+  r(`this is true`)
+} else {
+  r(`this is false`)
+}
