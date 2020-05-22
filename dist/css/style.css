@@ -427,12 +427,39 @@ button.btn.btn-cube:focus {
 }
 .is-debug .org .mol {
   margin-top: 2.4rem;
-  padding: 2.4rem;
-  font-size: 2.4rem;
-  font-weight: 600;
+  padding: 3.2rem 2.4rem;
+  font-size: 2rem;
   line-height: 1.8;
-  border: 2px solid #dadbe1;
+  border: 2px solid #cbcdd4;
   border-radius: 12px;
+  letter-spacing: 1px;
+}
+.is-debug .org .mol h2,
+.is-debug .org .mol h3,
+.is-debug .org .mol p {
+  margin-top: 2rem;
+  font-size: 2rem;
+  color: #ff6347;
+}
+.is-debug .org .mol h2 {
+  font-size: 3.2rem;
+  color: #000080;
+  font-weight: 800;
+}
+.is-debug .org .mol h3 {
+  font-size: 2.4rem;
+  color: #ff6347;
+}
+.is-debug .org .mol p {
+  font-size: 1.8rem;
+}
+.is-debug .org .mol sub {
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
+  font-size: 1.6rem;
+  color: #00a6a6;
+  line-height: 1.5;
 }
 .m_loader-dot {
   text-align: center;
