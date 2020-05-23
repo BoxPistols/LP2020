@@ -196,19 +196,45 @@ if (num) {
 r(bl)
 
 /*----------  Default propaty  ----------*/
-h3(`デフォルトの値の設定`)
+h3(`引数 デフォルトの値の設定`)
 
 p(`helloDefName関数 on 変数`)
 // function helloDefName(name = 'Taro') {
-const helloDefName = function(name = 'Taro') {
-  r(name + "さん")
-}
+  const helloDefName = function(name = 'Taro') {
+    r(name + "さん")
+  }
 
-sub(`通常の値設置`)
-helloDefName('Yamamoto')
+  sub(`通常の値設置`)
+  helloDefName('Yamamoto')
 
-r(br)
+  r(br)
 
-sub(`関数の値を未設置にする`)
-// default
-helloDefName()
+  sub(`関数の値を未設置にする`)
+  // default
+  helloDefName()
+
+
+/*----------  Arrow Function  ----------*/
+h3(`Arrow function`)
+
+p(`アロー関数で1行にまとめる`)
+
+sub(`{ }が要らない *1行の時に限る`)
+
+const arrowFunc = (name, age) => r(`My data is ${name} ${age}歳`)
+arrowFunc('Sakata', 23)
+
+
+sub(`戻り値 return不要`)
+const arrowReturn = (age) => 'ぼく' + 20 + '歳'
+r(arrowReturn())
+
+p(`配列 forEach`)
+
+sub(`従来のforEach`)
+array.forEach(function(value){
+  r(value)
+})
+
+sub(`ArrowのforEach`)
+array.forEach(value => r(value))
