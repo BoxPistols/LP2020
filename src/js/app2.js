@@ -1,6 +1,8 @@
-/*=============================================
-= -----開発用設定＝JavaScriptHTML表示----- =
-=============================================*/
+/* =============================================
+=
+ * -----開発用設定＝JavaScriptHTML表示----- =
+ * =============================================
+ */
 
 /**
 * 開発用変数
@@ -46,7 +48,6 @@ const sub = (_s) => {
 
 /*=====  End of 開発用設定  ======*/
 
-
 h2(`Basic`)
 
 /*----------  Function  ----------*/
@@ -57,7 +58,7 @@ sub(`変数に関数を代入、実行`)
   r(x + "さん")
 } */
 const hello = function (x) {
-  r("Hello!" + x )
+  r("Hello!" + x)
 }
 hello("John")
 
@@ -66,7 +67,6 @@ r(bl)
 /*----------  Object  ----------*/
 h3(`メソッド`)
 sub(`メソッド、配列も入れられる`)
-
 
 const person = {
   name: [
@@ -85,7 +85,6 @@ const person = {
 r(person.name[1] + '!!')
 r(br)
 person.getName()
-
 
 r(br)
 
@@ -124,7 +123,6 @@ for (let v of array) {
   r(v)
 }
 
-
 r(bl)
 
 /*----------  Todo List  ----------*/
@@ -135,18 +133,15 @@ const todos = [
     id: 1,
     title: 'Study English',
     completed: true
-  },
-  {
+  }, {
     id: 2,
     title: 'Study JavaScript',
     completed: false
-  },
-  {
+  }, {
     id: 3,
     title: 'Slack on Design Team',
     completed: true
-  },
-  {
+  }, {
     id: 4,
     title: 'Eat Lunch',
     completed: false
@@ -175,7 +170,7 @@ sub(`条件検出 boolean`)
 /*
  * !で否定
 */
-if(1 === '1'){
+if (1 === '1') {
   r(`== true / 型問わず`)
 } else {
   r(`=== 型も完全一致`)
@@ -192,8 +187,28 @@ r(bool)
 r(br)
 
 sub(`真偽判定 + 条件分岐連動`)
-if(num){
+if (num) {
   r(`this is true`)
 } else {
   r(`this is false`)
 }
+
+r(bl)
+
+/*----------  Default propaty  ----------*/
+h3(`デフォルトの値の設定`)
+
+p(`helloDefName関数 on 変数`)
+// function helloDefName(name = 'Taro') {
+const helloDefName = function(name = 'Taro') {
+  r(name + "さん")
+}
+
+sub(`通常の値設置`)
+helloDefName('Yamamoto')
+
+r(br)
+
+sub(`関数の値を未設置にする`)
+// default
+helloDefName()

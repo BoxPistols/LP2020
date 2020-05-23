@@ -88,9 +88,11 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-/*=============================================
-= -----開発用設定＝JavaScriptHTML表示----- =
-=============================================*/
+/* =============================================
+=
+ * -----開発用設定＝JavaScriptHTML表示----- =
+ * =============================================
+ */
 
 /**
 * 開発用変数
@@ -270,6 +272,23 @@ if (num) {
 } else {
   r(`this is false`);
 }
+
+r(bl);
+/*----------  Default propaty  ----------*/
+
+h3(`デフォルトの値の設定`);
+p(`helloDefName関数 on 変数`); // function helloDefName(name = 'Taro') {
+
+const helloDefName = function helloDefName(name = 'Taro') {
+  r(name + "さん");
+};
+
+sub(`通常の値設置`);
+helloDefName('Yamamoto');
+r(br);
+sub(`関数の値を未設置にする`); // default
+
+helloDefName();
 
 /***/ })
 /******/ ]);
