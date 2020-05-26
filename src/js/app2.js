@@ -337,3 +337,41 @@ function plus(a, b){
 doSomething(2, 5, multiplay)
 r(br)
 doSomething(2, 5, plus)
+
+r(br)
+// ----- for ------
+sub(`for callback`)
+
+/* 関数(第一引数、第二引数)｛ 処理 for { コールバック関数を（配列に当てていく）} ｝
+ * 第一引数はfor文内で配列を取得
+ * 第二引数はコールバック用の関数
+ * 第二引数（第一引数[配列表示]）
+ * 第二引数用の関数うは別途記述、計算式も設置可能
+ * 第二引数用の関数（仮引数）｛ 処理 ｝
+*/
+function forEachVal(ar, callback){
+  for (let i = 0; i < ar.length; i++) {
+    callback(ar[i])
+    // const forEl = ar[i]
+    // forEach_view(forEl)
+  }
+}
+
+function forEach_view(f){
+  r(f)
+}
+
+// function double(d){
+//   d = d * 2 + 10
+//   r(d + ",")
+// }
+
+function double(_d){
+  _d = _d * 3 + 10
+  r(_d + ",")
+}
+
+forEachVal(array, function(_db){
+  _db = _db * 35 + 1
+  r(_db + "/")
+})
