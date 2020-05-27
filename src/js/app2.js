@@ -239,6 +239,8 @@ array.forEach(function(value){
 sub(`ArrowのforEach`)
 array.forEach(value => r(value))
 
+
+r(bl)
 /*----------  Callback Function  ----------*/
 h3(`Callback function`)
 
@@ -374,4 +376,39 @@ function double(_d){
 forEachVal(array, function(_db){
   _db = _db * 35 + 1
   r(_db + "/")
+})
+
+/*----------  forEach Method  ----------*/
+h3(`forEach Method`)
+
+p(`forEachで配列を記述`)
+
+sub(`forEach Method`)
+
+/*
+* forEach = メソッド
+* (v)コールバック関数の引数 ≒ 第一引数
+* コールバック関数の中で引数が渡されている
+* 配列の要素がやってくる
+*/
+array.forEach(function(v){
+  r(`${v},`)
+})
+r(br)
+
+
+sub(`forEach関数を引数に渡す`)
+array.forEach(function(v){
+  r(v + " - ")
+})
+r(br)
+
+sub(`一行で`)
+array.forEach(x => r(x))
+r(br)
+
+sub(`引数 1 2 3`)　
+// 引数（値, 　添え字（index）, 配列そのもの）
+array.forEach(function(a, index, arr){
+  r(`値：${a}, Index：${index}, <br> 配列：${arr} <br>`)
 })
