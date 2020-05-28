@@ -76,7 +76,7 @@ const person = {
   gender: 'male',
   interests: {
     sports: 'soccer',
-    music: 'guiter'
+    music: 'guitar'
   },
   getName: function () {
     r(`${this.name[1]} Play ${this.interests.music}`)
@@ -195,7 +195,7 @@ if (num) {
 
 r(bl)
 
-/*----------  Default propaty  ----------*/
+/*----------  Default property  ----------*/
 h3(`引数 デフォルトの値の設定`)
 
 p(`helloDefName関数 on 変数`)
@@ -205,7 +205,7 @@ p(`helloDefName関数 on 変数`)
   }
 
   sub(`通常の値設置`)
-  helloDefName('Yamamoto')
+  helloDefName('Kumamoto')
 
   r(br)
 
@@ -222,7 +222,7 @@ p(`アロー関数で1行にまとめる`)
 sub(`{ }が要らない *1行の時に限る`)
 
 const arrowFunc = (name, age) => r(`My data is ${name} ${age}歳`)
-arrowFunc('Sakata', 23)
+arrowFunc('Sakai', 23)
 
 
 sub(`戻り値 return不要`)
@@ -327,7 +327,7 @@ function doSomething(a, b, callback){
   r(result)
 }
 // 計算用関数
-function multiplay(a, b){
+function multi_play(a, b){
   // 計算処理
   return a * b
 }
@@ -336,7 +336,7 @@ function plus(a, b){
 }
 
 // 関数の実行(値, 値, 計算関数)
-doSomething(2, 5, multiplay)
+doSomething(2, 5, multi_play)
 r(br)
 doSomething(2, 5, plus)
 
@@ -412,3 +412,33 @@ sub(`引数 1 2 3`)　
 array.forEach(function(a, index, arr){
   r(`値：${a}, Index：${index}, <br> 配列：${arr} <br>`)
 })
+
+
+r(bl)
+/*----------  Function  ----------*/
+h3(`reduce関数`)
+p(`Accumulation 蓄積させる`)
+
+sub(`reduceで蓄積計算`)
+
+array.reduce((accumulation, current) => {
+  // r(`acc = ${accumulation} | `)
+  // r(`cur = ${current}<br>`)
+  r(`${accumulation}, ${current}<br>`)
+  return accumulation + current
+}, 10) // 第一引数
+
+sub(`split`)
+const str = 'animation'
+const strArry = str.split('') // 配列にする
+r(strArry)
+
+// 配列に対してreduce
+sub(`配列に対してreduce`)
+const result = strArry.reduce((accumulation, current) => {
+  console.log(accumulation)
+  return accumulation + '' + current + '/'
+}, "/")
+
+console.log(result)
+r(result)

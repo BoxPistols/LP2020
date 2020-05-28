@@ -1,3 +1,4 @@
 node_modules
-// prepros.config
-// dist
+dist
+.history
+prepros.config
