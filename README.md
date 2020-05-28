@@ -1,5 +1,9 @@
 # LP2020
 
+## dev setting
+
+- if can not ignore dist folder
+- do cached dist `git rm -r --cached dist`
 
 ## Tree
 
