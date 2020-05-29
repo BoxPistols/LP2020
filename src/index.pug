@@ -9,33 +9,29 @@ html(lang="ja")
     link(rel='stylesheet', href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600&display=swap")
 
     link(rel='stylesheet', href="css/style.css")
-    //- GA
-      script.
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-XXXXXXXX-Y', 'example.com');
-        ga('send', 'pageview');
-  body
 
+  body
     .wrap
       .overlay
       .container
-        //- header
+        header
           .l_menu
             include html/_mobile-menu
 
         //- .content
-        //-   include html/_button
+          include html/_button
 
-        .content
+        //- .content
           //- include html/_loader-dot
           //- include html/_anime-text
           //- include  html/_anime-contents
           //- include  html/_image-design
           //- include  html/_slide-image
-          include html/_js001-Basic
+
+        //----- JavaScript -----
+        .content
+          //- include html/_js001-Basic
+          include html/_js002-Dom
 
         //- .content
         //-   div content
@@ -43,4 +39,4 @@ html(lang="ja")
         //-   div content
 
     //- include html/_footer
-    script(src="js/app2.js")
+    script(src="js/main.js")
