@@ -1,4 +1,4 @@
-/* =============================================
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　/* =============================================
 =
  * -----開発用設定＝JavaScriptHTML表示----- =
  * =============================================
@@ -133,7 +133,7 @@ const todos = [
     id: 1,
     title: 'Study English',
     completed: true
-  }, {
+  }, {　
     id: 2,
     title: 'Study JavaScript',
     completed: false
@@ -213,6 +213,16 @@ p(`helloDefName関数 on 変数`)
   // default
   helloDefName()
 
+p(`テスト デフォルトの値`)
+
+const nameSet = (name = "名無し") => {
+  r(name + 'ちゃん')
+}
+nameSet()
+r(br)
+nameSet('おれおれ')
+p('テストOK！')
+
 
 /*----------  Arrow Function  ----------*/
 h3(`Arrow function`)
@@ -239,6 +249,14 @@ array.forEach(function(value){
 sub(`ArrowのforEach`)
 array.forEach(value => r(value))
 
+p(`test forEach to 1-Line`)
+sub(`test:OK!`)
+array.forEach(z => r(`${z * 12} `))
+
+sub(`not 1 line`)
+array.forEach(function(x){
+  r(x)
+})
 
 r(bl)
 /*----------  Callback Function  ----------*/
@@ -421,6 +439,7 @@ p(`Accumulation 蓄積させる`)
 
 sub(`reduceで蓄積計算`)
 
+// 配列.reduce関数((１引数, 2引数) =>{ 処理 返り値}, 2引数)
 array.reduce((accumulation, current) => {
   // r(`acc = ${accumulation} | `)
   // r(`cur = ${current}<br>`)
@@ -430,7 +449,7 @@ array.reduce((accumulation, current) => {
 
 sub(`split`)
 const str = 'animation'
-const strArry = str.split('') // 配列にする
+const strArry = str.split('') // 配列にする　
 r(strArry)
 
 // 配列に対してreduce
@@ -442,3 +461,42 @@ const result = strArry.reduce((accumulation, current) => {
 
 console.log(result)
 r(result)
+
+r(bl)
+// TODO: Later
+/*----------  Reduce応用  ----------*/
+p(`reduce 応用?`)
+
+sub(`reduce Set`)
+
+const string = 'ReduceAnime'
+const stringArray = string.split('')
+r(stringArray)
+console.log(stringArray)
+r(br)
+
+sub(`tag reduce`)
+
+// tag コールバック関数 currentTag に値が渡る
+function tagAnim(accumulationTag, currentTag){
+  // r(accumulationTag, currentTag + `<br>`)
+  return accumulationTag + currentTag
+}
+
+const resultTag = stringArray.reduce(tagAnim, '')
+console.log('resultTag ' + resultTag)
+r('resultTag ' + resultTag)
+
+reduce((arry, callback, defaultValue) => {
+  let accumulation = defaultValue
+  for (let i = 0; i < arry.length; i++) {
+    let currentTag = arry[i];
+    callback(accumulationTag, currentTag)
+  }
+  return accumulationTag
+})
+
+r(resultTag)
+
+// TODO: Reduce?
+p(`re reduce`)
