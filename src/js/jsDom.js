@@ -36,3 +36,13 @@ const event_Hello = function(){
 }
 // ターゲットに対して、イベントを設定  変数（実行の種類, 作成しておいた関数）
 dom_event_isClick.addEventListener('click', event_Hello)
+
+// 復習
+d(`<br><p>foeEach List addEventListener</p>`)
+
+// const 定数 = function(){ 処理 }　<- 無名関数
+const list_Hello = function(){
+  alert('List Alert!!')
+}
+// 変数（ターゲットドキュメント）.forEach( 実行用引数 => （実行用引数.addEventListener('実行タイプ',無名関数の定数)）)
+dom_list.forEach( node =>(node.addEventListener('click', list_Hello)) )
