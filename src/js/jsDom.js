@@ -60,3 +60,53 @@ const changeBGColor =　function(){
 dom_list.forEach(node => (node.addEventListener('click', changeColor)) )
 dom_list.forEach(node => (node.addEventListener('click', changeBGColor)) )
 
+
+
+/*=============================================
+=            Load            =
+=============================================*/
+
+const dcl = document.querySelector('.dcl');
+const load = document.querySelector('.load');
+
+/* 読み込みタイミング
+ * ターゲットのHTMLよりJSの読み込みタイミングの方が早ければエラー
+ * DOMContentLoadedで、Domが読み込まれてから発火させる
+ */
+
+/**
+  // DOMContentLoadedスコープの外側に設置、かつjsが先読みだと読み込まれない
+  document.addEventListener("DOMContentLoaded"...への設置で読み込み可能になる
+  window.addEventListener("load", function ()でも良いが、これは全部読み込んでからとなるので、表示は遅くなる
+  //
+  */
+  const h1 = document.querySelector('h1');
+  h1.style.color = 'red';
+
+document.addEventListener("DOMContentLoaded", function () {
+  const h1 = document.querySelector('h1#main-title');
+  h1.style.color = 'blue';
+
+  // const h1 = document.querySelector('h1');
+  // h1.style.color = 'done';
+  // console.log("load DOMContentLoaded")
+});
+
+window.addEventListener("load", function () {
+  // const h1 = document.querySelector('h1');
+  // h1.style.color = 'red';
+  // console.log("load")
+  const h1 = document.querySelector('h1#main-title');
+  h1.style.color = 'yellow';
+
+});
+
+// ダウンロードを待たずに発火＝HTMLがDomに変換されたタイミングで発火
+window.addEventListener("DOMContentLoaded", function (event) {
+  dcl.classList.add('done');
+});
+
+// 画像も全部読み込んでから発火 documentはload出来ない
+window.addEventListener("load", function (event) {
+  load.classList.add('done');
+});　
