@@ -1,0 +1,27 @@
+.js-tex-anime
+  &__ly
+    background-color pink
+    padding 2.4rem
+  &__og
+    fx-c()
+  &__ml
+    font-size 2.4rem
+    >.char
+      letter-spacing 0px
+      color navy
+      opacity 0
+      transform scale(0)
+
+    &.is-anime
+      >.char
+        display inline-block
+        animation(
+          $name: tx_anim,
+          $duration: .5s,
+          $timing-function: cubic-bezier(0.5, 1, 0.5, 1),
+          $iteration-count: 1,
+          $fill-mode: both
+        )
+        for num in (1..18)
+          &:nth-child({num})
+            animation-delay (num * (0.04))s
