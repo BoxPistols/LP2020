@@ -9,11 +9,13 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 800)
 
   /*----------  js Text Animation  ----------*/
-  document.querySelector('.js-tex-anime__button').onclick = function () {
+  const btn = document.querySelector('.js-tex-anime__button')
+  // btn.addEventListener('click', (ta.animate.bind(ta)))
+  btn.addEventListener('click', function () {
     ta.animate()
     ta2.animate()
-  }
-});
+  })
+})
 
 /*----------  Class on js  ----------*/
 class TextAnimation {
