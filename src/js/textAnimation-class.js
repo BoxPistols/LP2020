@@ -29,6 +29,14 @@ class TextAnimation {
     }, '')
   }
   animate() {
-    this.el.classList.toggle('is-anime')
+    const _that = this // thisを代入しておく
+    window.setTimeout(function () { // コールバックファンクション
+      console.log(_that)
+      _that.el.classList.toggle('is-anime')
+    }) // bindを用いたthisの束縛
+    // window.setTimeout(function () {
+    //   console.log(this)
+    //   this.el.classList.toggle('is-anime')
+    // }.bind(this)) // bindを用いたthisの束縛
   }
 }
