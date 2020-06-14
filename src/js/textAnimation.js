@@ -30,23 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-/*----------  js Text Animation  ----------*/
-document.querySelector('.js-tex-anime__button').onclick = function () {
-  /*   const texAnim_target = document.querySelector('.js-tex-anime__ml')
-  const texAnim_target2 = document.querySelector('.js-tex-anime__ml.v2')
-  texAnim_target.classList.toggle('is-anime')
-  texAnim_target2.classList.toggle('is-anime') */
-  // Classにまとめます
-  const c1 = new TextAnimation('.js-tex-anime__ml')
-  c1.toggleClass()
-  c1.log()
-  const c2 = new TextAnimation('.js-tex-anime__ml.v2')
-  c2.toggleClass()
-  c2.log()
-}
-
 /*----------  Class on js  ----------*/
-class TextAnimation {
+class TextAnim {
   constructor(t) {　// constructor = 初期化されるタイミングで実行される関数 (引数)
     this.t = document.querySelector(t)　// 値を格納
   }
@@ -59,3 +44,17 @@ class TextAnimation {
 }
 
 
+/*----------  js Text Animation  ----------*/
+document.querySelector('.js-tex-anime__button').onclick = function () {
+  /*   const texAnim_target = document.querySelector('.js-tex-anime__ml')
+  const texAnim_target2 = document.querySelector('.js-tex-anime__ml.v2')
+  texAnim_target.classList.toggle('is-anime')
+  texAnim_target2.classList.toggle('is-anime') */
+  // Classにまとめます
+  const c1 = new TextAnim('.js-tex-anime__ml')
+  c1.toggleClass()
+  c1.log()
+  const c2 = new TextAnim('.js-tex-anime__ml.v2')
+  c2.toggleClass()
+  c2.log()
+}

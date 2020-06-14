@@ -2,13 +2,13 @@
 html(lang="ja")
   head
     meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
     title LP2020
 
-    link(rel='stylesheet', href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600&display=swap")
+    link(rel='stylesheet' href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600&display=swap")
 
-    link(rel='stylesheet', href="css/style.css")
+    link(rel='stylesheet' href="css/style.css")
 
   body
     .wrap
@@ -18,20 +18,20 @@ html(lang="ja")
           .l_menu
             include html/_mobile-menu
 
-        //- .content
-        //-   include html/_button
+        .content
+          include html/_button
 
-        //- .content
-          //- include html/_loader-dot
-          //- include html/_anime-text
-          //- include  html/_anime-contents
-          //- include  html/_image-design
-          //- include  html/_slide-image
+        .content
+          include html/_loader-dot
+          include html/_anime-text
+          include  html/_anime-contents
+          include  html/_image-design
+          include  html/_slide-image
 
         //----- JavaScript -----
         .content
-          //- include html/_js001-Basic
-          //- include html/_js002-Dom
+          include html/_js001-Basic
+          include html/_js002-Dom
           include html/_js003-TextAnimation
 
         //- .content
