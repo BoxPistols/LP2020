@@ -491,6 +491,7 @@ r(br)
 // 関数
 p(`Class Obj`)
 sub(`function obj`)
+
 const obj = {
   first_name: "Bob",
   printName() {
@@ -510,6 +511,13 @@ class MyObj {
   }
   printMyName() {
     r(`printMyName`)
+    r(`<br>this.name: ` + this.name)
+    const _that = this
+
+    window.setTimeout(function () {
+      r(`<br>window.setTimeout: ${_that.name}`)
+    })
+
   }
 }
 
@@ -520,3 +528,4 @@ r(br)
 r(viewMyObj.age)
 r(br)
 viewMyObj.printMyName()
+
